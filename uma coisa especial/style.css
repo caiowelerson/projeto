@@ -1,0 +1,374 @@
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    background: linear-gradient(
+        135deg,
+        #ffe5ec,
+        #fff5f7,
+        #ffd6e0
+    );
+
+    color: #5a2635;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    position: relative;
+
+    z-index: 2;
+
+    width: 90%;
+    max-width: 600px;
+
+    text-align: center;
+}
+
+h1 {
+    font-size: 42px;
+
+    color: #a61e45;
+
+    margin-bottom: 10px;
+}
+
+.instrucao {
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    color: #7a4a58;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   CARTA
+========================= */
+
+.carta {
+    position: relative;
+
+    width: 100%;
+    max-width: 500px;
+
+    min-height: 330px;
+
+    margin: auto;
+
+    cursor: pointer;
+
+    perspective: 1000px;
+}
+
+
+/* Frente da carta */
+
+.carta-frente {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 50px 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: #fffafa;
+
+    border: 2px solid #e8a5b6;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 35px rgba(90, 38, 53, 0.15);
+
+    transition: 0.6s;
+
+    z-index: 2;
+}
+
+.carta-frente h2 {
+    font-size: 28px;
+
+    color: #a61e45;
+
+    margin: 15px 0;
+}
+
+.carta-frente p {
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    color: #7a4a58;
+}
+
+.coracao {
+    font-size: 55px;
+
+    color: #d52d5a;
+
+    animation: pulsar 1.5s infinite;
+}
+
+@keyframes pulsar {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+.abrir {
+    margin-top: 25px;
+
+    padding: 10px 20px;
+
+    border-radius: 20px;
+
+    background: #f7d1dc;
+
+    color: #a61e45;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   PARTE INTERNA
+========================= */
+
+.carta-dentro {
+    width: 100%;
+    min-height: 330px;
+
+    padding: 35px;
+
+    background: #fffdf9;
+
+    border-radius: 12px;
+
+    border: 2px solid #e8a5b6;
+
+    box-shadow:
+        0 15px 35px rgba(90, 38, 53, 0.15);
+
+    display: none;
+
+    text-align: left;
+
+    animation: aparecer 0.7s ease;
+}
+
+.carta-dentro h2 {
+    text-align: center;
+
+    color: #a61e45;
+
+    margin-bottom: 25px;
+}
+
+.carta-dentro p {
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+}
+
+.carta-dentro .final {
+    text-align: center;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #c52250;
+
+    margin-top: 25px;
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================
+   CARTA ABERTA
+========================= */
+
+.carta.aberta .carta-frente {
+    display: none;
+}
+
+.carta.aberta .carta-dentro {
+    display: block;
+}
+
+
+/* =========================
+   BOTÃO DA MÚSICA
+========================= */
+
+#botaoMusica {
+    margin-top: 30px;
+
+    padding: 14px 28px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #a61e45;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#botaoMusica:hover {
+    background: #821637;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   CORAÇÕES DE FUNDO
+========================= */
+
+.coracoes span {
+    position: absolute;
+
+    color: rgba(213, 45, 90, 0.18);
+
+    font-size: 30px;
+
+    animation: flutuar 8s linear infinite;
+}
+
+.coracoes span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.coracoes span:nth-child(2) {
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.coracoes span:nth-child(3) {
+    left: 40%;
+    animation-delay: 4s;
+}
+
+.coracoes span:nth-child(4) {
+    left: 60%;
+    animation-delay: 1s;
+}
+
+.coracoes span:nth-child(5) {
+    left: 75%;
+    animation-delay: 3s;
+}
+
+.coracoes span:nth-child(6) {
+    left: 90%;
+    animation-delay: 5s;
+}
+
+@keyframes flutuar {
+
+    0% {
+        bottom: -50px;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        bottom: 110%;
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .carta {
+        min-height: 350px;
+    }
+
+    .carta-dentro {
+        min-height: 350px;
+
+        padding: 25px;
+    }
+
+    .carta-dentro p {
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+}
